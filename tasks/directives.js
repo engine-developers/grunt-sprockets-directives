@@ -45,8 +45,9 @@ module.exports = function(grunt) {
         dest    : f.dest,
         nonull  : options.nonull
       });
-      grunt.config.set('stripDirectives.directives', { src: f.dest });
-      grunt.task.run([ 'concat:directives', 'stripDirectives:directives' ]);
+
+      // we need concat only
+      grunt.task.run('concat:directives');
     });
   });
 
